@@ -1,0 +1,28 @@
+{
+  "productsList": [
+    {
+      "name": "Pear yPhone 72",
+      "category": "phone",
+      "details": {
+        "displayAspectRatio": "97:3",
+        "audioConnector": "none"
+      }
+    },
+    {
+      "name": "Beko",
+      "category": "fridge",
+      "details": {
+        "height": "21",
+        "width" : "37"
+      }
+    },
+    {
+      "name": "Tracer",
+      "category": "headphones",
+      "details": {
+        "strand": "10000",
+        "colour": "black"
+      }
+    }
+  ]
+}
