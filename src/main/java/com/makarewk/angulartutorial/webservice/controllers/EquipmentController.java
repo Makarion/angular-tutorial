@@ -1,5 +1,6 @@
 package com.makarewk.angulartutorial.webservice.controllers;
 
+import com.makarewk.angulartutorial.webconfig.model.UserLogin;
 import com.makarewk.angulartutorial.webservice.enums.StatusEnum;
 import com.makarewk.angulartutorial.webservice.repositories.*;
 import com.makarewk.angulartutorial.webservice.entities.*;
@@ -20,6 +21,13 @@ public class EquipmentController {
         this.equipmentRepository = equipmentRepository;
     }
 
+    @GetMapping(produces = "application/json")
+    @RequestMapping({ "/validateLogin" })
+    public UserLogin validateLogin() {
+        return new UserLogin("User successfully authenticated");
+    }
+
+
     @GetMapping
     public List<Equipment> getEquipment() {
         return (List<Equipment>)equipmentRepository.findAll();
@@ -31,7 +39,7 @@ public class EquipmentController {
     }
 
     @PostMapping("/equipmentDetails/{id}")
-    public void reportSomeDamage(@RequestBody Equipment equipment) {
+    public void reportSomeDamage(@RequestBody Equipment equipment, @PathVariable String id) {
         equipment.setStatusEnum(StatusEnum.AWARIA);
         equipmentRepository.save(equipment);
     }
