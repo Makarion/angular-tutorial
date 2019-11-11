@@ -31,7 +31,7 @@ public class EquipmentController {
     }
 
     @PostMapping("/equipmentDetails/{id}")
-    public void reportSomeDamage(@RequestBody Equipment equipment) {
+    public void reportSomeDamage(@RequestBody Equipment equipment, @PathVariable String id) {
         equipment.setStatusEnum(StatusEnum.AWARIA);
         equipmentRepository.save(equipment);
     }
